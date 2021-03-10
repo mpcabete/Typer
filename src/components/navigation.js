@@ -7,6 +7,10 @@ import Theme from "../components/theme"
 
 const MenuItems = [
   {
+    path: "/app",
+    title: "App"
+  },
+  {
     path: "/",
     title: "Home"
   },

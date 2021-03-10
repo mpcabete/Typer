@@ -21,6 +21,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "d3": "^6.5.0",
     "gatsby": "^2.21.33",
     "gatsby-background-image": "^1.1.1",
     "gatsby-image": "^2.4.3",
@@ -45,6 +46,7 @@
     "netlify-cms-app": "^2.12.12",
     "node-sass": "^4.14.1",
     "prismjs": "^1.20.0",
+    "random-words": "^1.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
