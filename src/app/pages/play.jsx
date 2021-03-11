@@ -29,7 +29,7 @@ class PlayPage extends Component {
 
         localStorage.setItem('history',JSON.stringify( localHistory ))
         // mostra estatisticas
-        const lastChallange = localHistory[localHistory.length-2].map(c=>{c.timestamp = new Date(c.timestamp); return c}) ?? null
+        const lastChallange = localHistory[localHistory.length-2]?.map(c=>{c.timestamp = new Date(c.timestamp); return c}) ?? null
 
         
 
