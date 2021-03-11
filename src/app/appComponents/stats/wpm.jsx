@@ -9,14 +9,14 @@ const Wpm = ({log,whitespace,lastChallange}) => {
         const tZero = log[0].timestamp.getTime()
         const tNow = log[log.length - 1].timestamp.getTime()
         const deltaT = (tNow - tZero) / 1000
-        const wpm = words / deltaT * 60
+        const wpm = (words / deltaT * 60).toFixed(2)
         return wpm
     }
     const wpm = getWpm(log,whitespace)
 
     let deltaSpan
     if(lastChallange){
-        const deltaWpm = (wpm - getWpm(lastChallange,whitespace)).toFixed(1)
+        const deltaWpm = (wpm - getWpm(lastChallange,whitespace)).toFixed(2)
         const deltaStyle = (value) => {
             return value<0?{color:'red'}:{color:'green'}
         }
