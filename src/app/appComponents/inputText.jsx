@@ -10,7 +10,7 @@ class InputText extends Component {
         p: 0,
         backSpaceList:[],
         failedAttempts: [],
-        time:5000,
+        time:40000,
         log: []
     }
 
@@ -52,6 +52,13 @@ class InputText extends Component {
         
         // verificar se tem letras erradas
         else if(!this.state.backSpaceList.length==0){
+            // se apertou o certo mas tem letras erradas
+            if(userInput === currentKey){
+                this.setState({
+                    backSpaceList:this.state.backSpaceList.concat(userInput),
+                    failedAttempts: this.state.failedAttempts.concat(userInput)
+                })
+            }
             return
         }
         // verificar se eh a tecla certa
