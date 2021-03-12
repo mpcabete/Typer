@@ -16,7 +16,10 @@ const Wpm = ({log,whitespace,lastChallange}) => {
 
     let deltaSpan
     if(lastChallange){
-        const deltaWpm = (wpm - getWpm(lastChallange,whitespace)).toFixed(2)
+        let currentWpm = isNaN(wpm)?0:wpm
+        let lastWpm = getWpm(lastChallange,whitespace)
+        
+        const deltaWpm =  (currentWpm - lastWpm).toFixed(2)
         const deltaStyle = (value) => {
             return value<0?{color:'red'}:{color:'green'}
         }
