@@ -20,7 +20,7 @@ class lineChart extends Component {
     }
 
     render() {
-       
+       return <></>
     }
 
     componentDidMount(){
