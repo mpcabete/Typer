@@ -22,6 +22,7 @@ class Stats extends Component {
             this.setState({
                 content:<h3>No Data Yet!</h3>
             })
+        return
         }
         
         // parse local storage logs
