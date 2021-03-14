@@ -5,28 +5,28 @@ import { Link } from "gatsby"
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import Theme from "../components/theme"
 
-const MenuItems = [
-  {
-    path: "/app",
-    title: "App"
-  },
-  {
-    path: "/",
-    title: "Home"
-  },
-  {
-    path: "/about",
-    title: "About"
-  },
-  {
-    path: "/blog",
-    title: "Blog"
-  },
-  {
-    path: "/contact",
-    title: "Contact"
-  },
-]
+// const MenuItems = [
+//   {
+//     path: "/app",
+//     title: "App"
+//   },
+//   {
+//     path: "/",
+//     title: "Home"
+//   },
+//   {
+//     path: "/about",
+//     title: "About"
+//   },
+//   {
+//     path: "/blog",
+//     title: "Blog"
+//   },
+//   {
+//     path: "/contact",
+//     title: "Contact"
+//   },
+// ]
 
 const ListLink = (props) => (<li><Link to={props.to}>{props.children}</Link></li>)
 
@@ -34,6 +34,7 @@ const ListLink = (props) => (<li><Link to={props.to}>{props.children}</Link></li
 class Navigation extends React.Component {
   constructor(props) {
     super(props)
+    this.MenuItems = this.props.itens
     this.state = {showMenu: false}
     this.handleToggleClick = this.handleToggleClick.bind(this);
   }
@@ -45,7 +46,7 @@ class Navigation extends React.Component {
   }
 
   render () {
-    const listMenuItems = MenuItems.map((menuItem, index) => 
+    const listMenuItems = this.MenuItems.map((menuItem, index) => 
       <ListLink key={index} to={menuItem.path}>{menuItem.title}</ListLink>
     )
     return (

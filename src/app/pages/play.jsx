@@ -72,6 +72,7 @@ class PlayPage extends Component {
 
     componentDidMount(){
         this.setState({
+            
             content:<button onClick={this.startChallange}>Start Challange</button>
         })
     }

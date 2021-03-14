@@ -2,16 +2,6 @@ import React, { Component } from 'react';
 
 const Wpm = ({log,whitespace,lastChallange}) => {
 
-    const getWpm = (log,whitespace)=>{
-
-        const words = log.filter(c => c.char === whitespace).length
-        if (words == 0) return '--'
-        const tZero = log[0].timestamp.getTime()
-        const tNow = log[log.length - 1].timestamp.getTime()
-        const deltaT = (tNow - tZero) / 1000
-        const wpm = (words / deltaT * 60).toFixed(2)
-        return wpm
-    }
     const wpm = getWpm(log,whitespace)
 
     let deltaSpan
@@ -30,18 +20,18 @@ const Wpm = ({log,whitespace,lastChallange}) => {
 
 
 }
+export const getWpm = (log,whitespace)=>{
+
+    const words = log.filter(c => c.char === whitespace).length
+    if (words == 0) return '--'
+    const tZero = log[0].timestamp.getTime()
+    const tNow = log[log.length - 1].timestamp.getTime()
+    const deltaT = (tNow - tZero) / 1000
+    const wpm = (words / deltaT * 60).toFixed(2)
+    return wpm
+}
 
 export default Wpm
-// export const getWpm = ({log,whitespace}) => {
-//     const words = log.filter(c => c.char === whitespace).length
-//     if (words == 0) return '--'
-//     const tZero = log[0].timestamp.getTime()
-//     const tNow = log[log.length - 1].timestamp.getTime()
-//     const deltaT = (tNow - tZero) / 1000
-//     const wpm = words / deltaT * 60
-//     // return wpm.toFixed(2)
 
 
-// }
-// export default Wpm;
 

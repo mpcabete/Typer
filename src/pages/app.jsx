@@ -1,12 +1,24 @@
 import{Router,Link} from '@reach/router'
 import React from 'react'
 import Home from '../app/appHome'
+import LineChart from '../app/appComponents/stats/lineChart'
+import Play from '../app/pages/play'
+import Stats from '../app/pages/stats'
+import Settings from '../app/pages/settings'
+
+
 const MyRouter = ()=>{
 
     return(
         <>
         <Router>
-            <Home path='/app/'/>
+            <Home path='app'>
+                {/* play */}
+                <Play path='/'/>
+                <Stats path='stats'/>
+                <Settings path='settings'/>
+                {/* <LineChart path = 'stats'></LineChart> */}
+            </Home>
         </Router>
         </>
     )

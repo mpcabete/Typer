@@ -80,22 +80,30 @@ amanha:
 -fiz a linha do grafico do historico
 -fiz os eixos x e y
 
+=================================================(14/3)
+-consegui fazer o router funcionar
+-coloquei os links das paginas do app na navbar do app
+-coloquei os graficos de wpm e precisao no stats
+
 
 =================================================(amanhã)
-[]pensar em como vou organizar os arquivos pras paginas do app
-[]pensar em como vai ser o header do app
-[]criar paginas/rotas pra historico planejamento e settings
-[]pesquisar vantagens e desvantagens e exemplos do router
-[]dar uma fuçada na pagina 404 quando dá voltar
 []fazer uma visualização pro log
-    []grafico de linha do progresso global
+    [x]grafico de linha do progresso global
+        -ajeitar melhor o codigo
+        -melhorar styles
+        -ajeitar lables
     []sanfona com os log
         -tem soh as datas e wpm e quando clicka sobe o texto/erros
+        -botao de excluir
+[]timing de cada letra
+
+
 []escolher e comprar dominio
 []escrever primeiro artigo
 []ajeitar a landing page e as paginas acessorias
 []melhorar SEO
 []aplicar pra ADSENSEE!!
+- criar paginas/rotas pra planejamento
 
 
 []implementar visualizador dos erros no texto
@@ -201,6 +209,12 @@ amanha:
         -()app
         -(?)donate
         -()pagina inicial
+
+        app
+            -rotas
+            -home
+                -header
+                -paginas
     
     ()treino
         ()botão iniciar desafio
@@ -228,6 +242,7 @@ amanha:
         ()estilo de input
         ()hilight dos erros
         ()desligar backspace
-        ()
+        ()limpar historico
+        (?)fonte
     -auth
     --opções de texto
