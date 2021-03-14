@@ -29,6 +29,13 @@ class Stats extends Component {
         let logs = JSON.parse(localStorage.history)
             logs = logs.map(log => log.map(c => { c.timestamp = new Date(c.timestamp); return c }))
 
+        if(logs.length==1) {
+            this.setState({
+                content:<h3>No Data Yet!</h3>
+            })
+        return
+        }
+
         // calcular os wpm dos desafios
         const data  = logs.map(log => ({
             time:log[0].timestamp,
