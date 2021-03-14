@@ -20,6 +20,11 @@ class lineChart extends Component {
     }
 
     render() {
+       
+    }
+
+    componentDidMount(){
+
         if (localStorage.history) {
             const { width, height } = this.state
             const margin = { top: 20, right: 20, bottom: 20, left: 40 }
