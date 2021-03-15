@@ -3,6 +3,7 @@ import LineChart from '../appComponents/stats/lineChart'
 import {getWpm} from '../appComponents/stats/wpm'
 import {getAccuracy} from '../appComponents/stats/accuracy'
 import { Flex } from '@theme-ui/components';
+import '../appComponents/statscss.css'
 
 class Stats extends Component {
     state = { 
@@ -47,12 +48,10 @@ class Stats extends Component {
         this.setState({content:
             <>
             <div>
-            <h3>WPM:</h3>
-            <LineChart data={data} x={d => d.time} y={d => d.wpm}/>
+            <LineChart title = {'WPM'} data={data} x={d => d.time} y={d => d.wpm}/>
             </div>
             <div>
-            <h3>Accuracy:</h3>
-            <LineChart data={data} x={d => d.time} y={d => d.accuracy}/>
+            <LineChart title = {'Accuracy'} data={data} x={d => d.time} y={d => d.accuracy}/>
             </div>
             </>
         })
