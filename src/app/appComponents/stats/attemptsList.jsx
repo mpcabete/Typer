@@ -26,7 +26,7 @@ class AttemptsList extends Component {
 
         
         return (
-            <ul>
+            <ul className="errors-list">
                 {elementList}
             </ul>
         );

@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-body{
-  font-family: 'Poppins', sans-serif;
-  
+/* .charts{
+
+
+} */
+base-text{
+  fill:pink
 }
 
 .chart_title{
+  font-family: 'Poppins', sans-serif;
   background-color:#F5F3F2 ;
   color: #635F5D;
   width: 650px;
   margin-bottom: 1px;
-
+  padding: 6px 22px;
+  border-radius: 6px 6px 0 0;
 }
 
 .data_line{
@@ -27,9 +32,11 @@ body{
 }
 
 .chart{
+  font-family: 'Poppins', sans-serif;
   background-color: #EFECEA;
+  border-radius:0 0 6px 6px ;
 }
 
 .axis_label{
-  font-size:12px;
+  font-size:14px;
 }

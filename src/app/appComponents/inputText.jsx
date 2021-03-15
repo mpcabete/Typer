@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Position from './position'
 import Wpm from './stats/wpm'
-import AttemptsList from './stats/attemptsList'
 import Timer from './timer'
 import rw from 'random-words'
 class InputText extends Component {
@@ -100,7 +99,7 @@ class InputText extends Component {
     render() {
         return (
             <>
-            {this.state.log.length>0 ? <Timer onFinish={this.timerFinishedHandler} time={this.state.time}/> : <p>Start typing</p>}
+            {this.state.log.length>0 ? <Timer onFinish={this.timerFinishedHandler} time={this.state.time}/> : <p>{this.state.time/1000}s, The timer starts when you type</p>}
 
                 <svg width='100%' height='100%' onKeyDown={this.set}>
                     <defs>
@@ -110,13 +109,13 @@ class InputText extends Component {
                             <stop offset="100%" style={{ 'stopColor': 'transparent', 'stopOpacity': 1 }} />
                         </linearGradient>
                     </defs>
-                    <text textAnchor="end" x='50%' y='100' fill='red'> {this.state.backSpaceList} </text>
+                    <text className='failed_attempts' textAnchor="end" x='50%' y='100'> {this.state.backSpaceList} </text>
                     {/* no final tem q mudar o +50 se n o texto n anda */}
                     <text x='50%' y='100' fill='url(#grad1)'>{this.state.text.substring(this.state.p, this.state.p + 50)}</text>
+                    <rect className='carret' x='calc(50% - 2px)' y={100-16} width='2px' height='18px'/>
                 </svg >
                     
                 <Wpm log={this.state.log} whitespace={this.props.whitespace} />
-                <AttemptsList log={this.state.log}/>
             </>
         );
     }

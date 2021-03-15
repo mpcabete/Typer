@@ -1,0 +1,72 @@
+
+.carret{
+  animation: blink-caret 1s step-end infinite;
+}
+
+.failed_attempts{
+  fill:#e24a4a;
+}
+
+.start_btn{
+  
+  background-color: #4CAF50; /* Green */
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  font-size: 19px;
+  transition-duration: 0.4s;
+}
+
+.start_btn:hover{
+  background-color: #ffffff; /* Green */
+  color: rgb(0, 0, 0);
+}
+
+.errors-list{
+  list-style-type:none;
+  
+  
+}
+
+.wpm_counter span{
+  display: inline;
+  background: #f1ece8;
+  padding:6px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.accuracy_counter span{
+  display:inline;
+  background: #f1ece8;
+  padding: 6px;
+  border-radius: 8px;
+  text-align: center;
+
+}
+
+.errors-list li{
+  background: #f1ece8;
+  text-align: center;
+
+  display: inline;
+  border-radius: 8px;
+  padding:6px;
+  margin:10px;
+  font-size:1.5em;
+  font-weight:bold;
+  color:#ffd7be;
+  text-shadow: 0 0 2px black;
+  /* box-shadow: 0 0 2px black;  */
+ 
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { fill: transparent; }
+  50% { fill:#a5a5a5; }
+}

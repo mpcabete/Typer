@@ -14,12 +14,12 @@ class lineChart extends Component {
 
         // dimensoes
         const { width, height } = this.state
-        const margin = { top: 20, right: 30, bottom: 8+12+22+12+10, left: 40 }
+        const margin = { top: 22+6, right: 22+6, bottom: 8+12+22+12+7, left: 22+22 }
         const innerHeight = height - margin.top - margin.bottom
         const innerWidth = width - margin.right - margin.left
 
 
-        const {title, data,x,y} = this.props
+        const {title, data,x,y,unit} = this.props
         // escalas
         const xScale = d3.scaleTime().domain(d3.extent(data.map(d=>x(d)))).range([0, innerWidth]).nice()
         const yScale = d3.scaleSequential().domain([0,d3.extent(data.map(d=>y(d)))[1]].reverse()).range([0, innerHeight]).nice()
@@ -39,7 +39,7 @@ class lineChart extends Component {
                 transform={`translate(${xScale(tickValue)},0)`}
             >
                 <line
-                    
+                    y1={-6}
                     y2={innerHeight}
                     stroke='black'
                 />
@@ -67,7 +67,7 @@ class lineChart extends Component {
                     x='-4'
                     dy='.32em'
                     style={{ textAnchor: 'end' }}
-                >{tickValue}
+                >{`${tickValue}${unit}`}
                 </text>
             </g>
         ))
@@ -83,9 +83,9 @@ class lineChart extends Component {
                 x={innerWidth/2} 
                 y={innerHeight+12+8+22}
                 textAnchor="middle" >Date</text>
-                <path className='data_line' fill='none' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2px' stroke='black' d={line} />
                 {xTicks}
                 {yTicks}
+                <path className='data_line' fill='none' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2px' stroke='black' d={line} />
             </g>
         </svg>
         </>

@@ -3,12 +3,16 @@ import InputText from '../appComponents/inputText'
 import Wpm from '../appComponents/stats/wpm'
 import ColorViz from '../appComponents/stats/colorViz'
 import Acurracy from '../appComponents/stats/accuracy';
+import playcss from '../appComponents/playcss.css'
+import AttemptsList from '../appComponents/stats/attemptsList'
+
+// const btn = <button className='start_btn' onClick={this.startChallange}>Start Challange</button>
 
 class PlayPage extends Component {
     state = { 
         whitespace:'␣',
         content:
-            <p>p</p>
+            <></>
          
      }
 
@@ -42,12 +46,15 @@ class PlayPage extends Component {
 
         this.setState({
             content:<>
-            <button onClick={this.startChallange}>Start Challange</button>
+            
+            {<button className='start_btn' onClick={this.startChallange}>Start Challange</button>}
             <h2>WPM:</h2>
             <Wpm log={log} whitespace = {this.state.whitespace} lastChallange={lastChallange}/>
             <h2>Accuracy: </h2>
             <Acurracy log={log} lastChallange={localHistory[localHistory.length-2] ?? null} showDelta={true}/>
             <ColorViz log={log}/>
+            <h2>Miss Types</h2>
+            <AttemptsList log={log}/>
             </>
         })
         // mandar o log pra o backend
@@ -73,7 +80,10 @@ class PlayPage extends Component {
     componentDidMount(){
         this.setState({
             
-            content:<button onClick={this.startChallange}>Start Challange</button>
+            content:
+            <>
+            {<button className='start_btn' onClick={this.startChallange}>Start Challange</button>}
+            </>
         })
     }
 }

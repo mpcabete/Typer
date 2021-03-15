@@ -47,11 +47,9 @@ class Stats extends Component {
 
         this.setState({content:
             <>
-            <div>
-            <LineChart title = {'WPM'} data={data} x={d => d.time} y={d => d.wpm}/>
-            </div>
-            <div>
-            <LineChart title = {'Accuracy'} data={data} x={d => d.time} y={d => d.accuracy}/>
+            <div className='charts'>
+            <LineChart title = {'WPM'} data={data} x={d => d.time} y={d => d.wpm} unit=''/>
+            <LineChart title = {'Accuracy'} data={data} x={d => d.time} y={d => d.accuracy} unit='%'/>
             </div>
             </>
         })

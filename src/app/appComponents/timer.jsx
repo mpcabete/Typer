@@ -10,7 +10,7 @@ class Timer extends Component {
     }
 
     render() { 
-        return ( <p>{this.state.timeLeft/1000}</p> );
+        return ( <p>{(this.state.timeLeft/1000).toFixed(1)}s</p> );
     }
 
     updateTime(interval){

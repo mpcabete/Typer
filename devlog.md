@@ -84,7 +84,9 @@ amanha:
 -consegui fazer o router funcionar
 -coloquei os links das paginas do app na navbar do app
 -coloquei os graficos de wpm e precisao no stats
-
+-mexi no css do stats
+[]definir largura do chart por css, renderizar o svg com a class e pegar no component did mount
+[]colocar circulos no grafico
 
 =================================================(amanhã)
 []fazer uma visualização pro log

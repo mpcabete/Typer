@@ -16,7 +16,9 @@ const Wpm = ({log,whitespace,lastChallange}) => {
         deltaSpan = <span style={deltaStyle(deltaWpm)}>{`(${deltaWpm>0 ? '▴':'▾'} ${Math.abs(deltaWpm)})`}</span>
         
     }else deltaSpan = <></>
-    return <p>{wpm} {deltaSpan}</p>
+    return <p className='wpm_counter'>
+        <span>{wpm} {deltaSpan}</span>
+        </p>
 
 
 }

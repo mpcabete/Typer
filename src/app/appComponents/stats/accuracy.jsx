@@ -18,7 +18,11 @@ const Acurracy = ({log, lastChallange, showDelta}) => {
             
         }else deltaSpan = <></>
 
-    return (<p>{accuracy}% {deltaSpan}</p>);
+    return (<p className='accuracy_counter'>
+        <span>
+        {accuracy}% {deltaSpan}
+        </span>
+        </p>);
 }
  
 export default Acurracy;
