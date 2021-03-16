@@ -89,7 +89,10 @@ amanha:
 []colocar circulos no grafico
 
 =================================================(amanhã)
+[]arrumar bug do espaço com focus no tema
+[]arrumar bug do backspace
 []fazer uma visualização pro log
+    []diferenciar grafico do dia e global
     [x]grafico de linha do progresso global
         -ajeitar melhor o codigo
         -melhorar styles

@@ -47,13 +47,13 @@ class PlayPage extends Component {
         this.setState({
             content:<>
             
-            {<button className='start_btn' onClick={this.startChallange}>Start Challange</button>}
+            {<button className='start_btn' onClick={this.startChallange}>Start Challenge</button>}
             <h2>WPM:</h2>
             <Wpm log={log} whitespace = {this.state.whitespace} lastChallange={lastChallange}/>
             <h2>Accuracy: </h2>
             <Acurracy log={log} lastChallange={localHistory[localHistory.length-2] ?? null} showDelta={true}/>
             <ColorViz log={log}/>
-            <h2>Miss Types</h2>
+            <h2>Mistypes</h2>
             <AttemptsList log={log}/>
             </>
         })
@@ -82,7 +82,7 @@ class PlayPage extends Component {
             
             content:
             <>
-            {<button className='start_btn' onClick={this.startChallange}>Start Challange</button>}
+            {<button className='start_btn' onClick={this.startChallange}>Start Challenge</button>}
             </>
         })
     }
