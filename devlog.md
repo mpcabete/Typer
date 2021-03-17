@@ -87,6 +87,16 @@ amanha:
 -mexi no css do stats
 []definir largura do chart por css, renderizar o svg com a class e pegar no component did mount
 []colocar circulos no grafico
+=================================================(16/3)
+-comprei o dominio
+-coloquei analytics
+-me aprofundei no gatsby
+
+=================================================(17/3)
+-mudei site metadata
+    -falta imagem do icone
+
+
 
 =================================================(amanhã)
 []arrumar bug do espaço com focus no tema
