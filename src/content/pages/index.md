@@ -3,7 +3,7 @@ template: index-page
 slug: /
 title: TapTap Typer
 tagline: Become a typer ninja
-featuredImage: /assets/toa-heftiba-0rlfirsdvzu-unsplash.jpg
+featuredImage: /assets/pexels-omkar-patyane-211492.jpg
 cta:
   ctaText: Start Practicing!
   ctaLink: /app
