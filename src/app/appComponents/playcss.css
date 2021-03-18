@@ -1,6 +1,11 @@
 
 .carret{
   animation: blink-caret 1s step-end infinite;
+  height: 1.1em;
+}
+
+.inputSVG{
+  font-size: 1.5em;
 }
 
 .failed_attempts{

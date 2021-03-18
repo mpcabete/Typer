@@ -101,7 +101,7 @@ class InputText extends Component {
             <>
             {this.state.log.length>0 ? <Timer onFinish={this.timerFinishedHandler} time={this.state.time}/> : <p>{this.state.time/1000}s, The timer starts when you type</p>}
 
-                <svg width='100%' height='100%' onKeyDown={this.set}>
+                <svg className='inputSVG' width='100%' height='100%' onKeyDown={this.set}>
                     <defs>
                         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style={{ 'stopColor': 'black', 'stopOpacity': 1 }} />
@@ -112,7 +112,7 @@ class InputText extends Component {
                     <text className='failed_attempts' textAnchor="end" x='50%' y='100'> {this.state.backSpaceList} </text>
                     {/* no final tem q mudar o +50 se n o texto n anda */}
                     <text x='50%' y='100' fill='url(#grad1)'>{this.state.text.substring(this.state.p, this.state.p + 50)}</text>
-                    <rect className='carret' x='calc(50% - 2px)' y={100-16} width='2px' height='18px'/>
+                    <rect className='carret' x='calc(50% - 2px)' y='calc(100px - 1em)' width='2px' />
                 </svg >
                     
                 <Wpm log={this.state.log} whitespace={this.props.whitespace} />
