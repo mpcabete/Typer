@@ -96,6 +96,9 @@ amanha:
 -mudei site metadata
     -falta imagem do icone
 
+-mudei indice
+    -falta imagem
+
 
 
 =================================================(amanhã)

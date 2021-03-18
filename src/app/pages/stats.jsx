@@ -12,6 +12,7 @@ class Stats extends Component {
     }
 
     render() { 
+        
         return ( <>
             {this.state.content}
         </> );

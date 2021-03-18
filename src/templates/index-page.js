@@ -86,7 +86,7 @@ const HomePage = ({ data }) => {
               variant: 'links.button'
             }}
           >
-            {frontmatter.cta.ctaText}<span class="icon -right"><RiArrowRightSLine/></span>
+            {frontmatter.cta.ctaText}<span className="icon -right"><RiArrowRightSLine/></span>
           </Link>
           <div  className="social-icons" sx={indexStyles.socialIcons}>
             {sIcons}
