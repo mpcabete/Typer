@@ -19,7 +19,7 @@ class PlayPage extends Component {
     
 
     startChallange = () => {
-        console.log('click')
+        // console.log('click')
         this.setState({
             content:<InputText onFinish={this.challangeEndHandler} whitespace={this.state.whitespace}/>
         })
@@ -29,7 +29,6 @@ class PlayPage extends Component {
         // salvar log no local storage(talvez isso use mta memoria pra usuarios antigos)
         let localHistory = JSON.parse(localStorage.history ?? '[]')
         localHistory.push(log)
-        console.log('localH2',localHistory)
 
         localStorage.setItem('history',JSON.stringify( localHistory ))
         // mostra estatisticas

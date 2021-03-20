@@ -99,6 +99,13 @@ amanha:
 -mudei indice
     -falta imagem
 
+=================================================(18/3)
+-comecei o historico da pagina stats
+
+=================================================(19/3)
+-implementei função de selecionar partidas no historico
+    []colocar uma mensagem quando tiver menos de 2 selecionados
+
 
 
 =================================================(amanhã)

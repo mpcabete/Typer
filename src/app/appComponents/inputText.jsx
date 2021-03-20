@@ -106,6 +106,7 @@ class InputText extends Component {
                         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style={{ 'stopColor': 'black', 'stopOpacity': 1 }} />
                             <stop offset="60%" style={{ 'stopColor': 'black', 'stopOpacity': 1 }} />
+                            <stop offset="84%" style={{ 'stopColor': 'transparent', 'stopOpacity': 1 }} />
                             <stop offset="100%" style={{ 'stopColor': 'transparent', 'stopOpacity': 1 }} />
                         </linearGradient>
                     </defs>
@@ -115,7 +116,7 @@ class InputText extends Component {
                     <rect className='carret' x='calc(50% - 2px)' y='calc(100px - 1em)' width='2px' />
                 </svg >
                     
-                <Wpm log={this.state.log} whitespace={this.props.whitespace} />
+                <Wpm log={this.state.log} whitespace={this.props.whitespace} >WPM: </Wpm>
             </>
         );
     }

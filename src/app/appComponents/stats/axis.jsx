@@ -4,7 +4,6 @@ const Axis = ({ minmax, colors }) => {
     const ref = useRef()
     const width = document.querySelector('.container').clientWidth - 100
     useEffect(() => {
-        console.log('minmax', minmax)
         const scale = scaleLinear().domain(minmax).range([0, width])
         const axisG = select(ref.current);
         //TODO: mudar ticks pra width menor
@@ -13,7 +12,7 @@ const Axis = ({ minmax, colors }) => {
         const values = Array(ticks).fill().map((x, i) => {
             return valueScale(i)
         })
-        console.log(values)
+        
         axisG.call(axisBottom(scale)
             .tickValues(values)
             .tickFormat(x => `${Math.round(x)} ms`)

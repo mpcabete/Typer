@@ -5,7 +5,11 @@
 
 } */
 
-
+.stats-page{
+  columns: 2;
+  padding: 0;
+  margin: 0;
+}
 .chart_title{
   font-family: 'Poppins', sans-serif;
   background-color:#F5F3F2 ;
@@ -37,4 +41,83 @@
 
 .axis_label{
   font-size:14px;
+}
+
+.history-list  p{
+  position: relative;
+  background-color: #F5F3F2;
+  text-align: center;
+  margin:5px;
+  padding:15px 70px 20px 10px;
+  border-radius: 8px;
+  display:inline-block;
+}
+
+.history-list span {
+  background-color: #EFECEA;
+  text-align: center;
+  font-weight: bold;
+  margin:3px;
+  padding:10px;
+  display: inline;
+  border-radius: 8px;
+  text-align: center;
+  border-style:dotted;
+  border-color: rgb(255, 255, 255);
+  border-width: 2px;
+}
+
+.history-list .date-span {
+  font-size: 0.8em;
+  position:absolute;
+  left: 3px;
+  top:-5px;
+  background-color: transparent;
+  border-style: hidden;
+  padding:none;
+  margin: 5px 0 0 0;
+  font-weight:lighter ;
+  
+}
+
+.history-list li{
+  display: list-item;
+  list-style: none;
+}
+
+.history-list button{
+  background: none;
+  border: hidden;
+  cursor: pointer;
+}
+
+ .delete-btn {
+  display: none;
+  position:absolute ;
+  right: 3px;
+  top:4px;
+  transform: scale(0.7);
+}
+
+.select-btn {
+  position:absolute ;
+  right: 14px;
+  bottom:22%;
+  transform: scale(2.2);
+}
+
+.select-btn .unselected{
+  fill:transparent;
+}
+
+.select-btn .selected{
+  fill:rgb(88, 88, 88);
+}
+
+.history-list {
+  width: 100%;
+  height: 600px;
+  text-align: right;
+  overflow: auto;
+
 }

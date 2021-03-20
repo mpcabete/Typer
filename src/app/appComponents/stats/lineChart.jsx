@@ -32,6 +32,24 @@ class lineChart extends Component {
         .curve(d3.curveMonotoneX)(data)
 
         // cria o eixo x
+        // escolhe a formatação da data dependendo da escala
+        const domain = xScale.domain()
+        const deltaT = domain[1]-domain[0]
+        
+        let format 
+        // horas
+        if(deltaT<8640000){
+            format = d3.timeFormat('%-I:%M%p')
+        }
+        // dias+horas
+        // else if(deltaT<3*8640000){
+        //     format = d3.timeFormat('%e/%m %-I:%M%p')
+        // }
+        // dias
+        else{
+            format = d3.timeFormat('%e/%m')
+        }
+
         const xTicks = xScale.ticks().map(tickValue => (
             <g
                 className='tick'
@@ -47,7 +65,7 @@ class lineChart extends Component {
                     y={innerHeight+8}
                     dy='.71em'
                     style={{ textAnchor: 'middle' }}
-                >{d3.timeFormat('%e/%m')(tickValue)}
+                >{format(tickValue)}
                 </text>
             </g>
         ))

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const Wpm = ({log,whitespace,lastChallange}) => {
+const Wpm = ({log,whitespace,lastChallange,children}) => {
 
     const wpm = getWpm(log,whitespace)
 
@@ -17,7 +17,7 @@ const Wpm = ({log,whitespace,lastChallange}) => {
         
     }else deltaSpan = <></>
     return <p className='wpm_counter'>
-        <span>{wpm} {deltaSpan}</span>
+        <span>{children}{wpm} {deltaSpan}</span>
         </p>
 
 
