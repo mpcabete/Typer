@@ -105,7 +105,12 @@ amanha:
 =================================================(19/3)
 -implementei função de selecionar partidas no historico
     []colocar uma mensagem quando tiver menos de 2 selecionados
-
+    []colocar o historico na ordem inversa
+    []botao de delete
+    []selectAll/periodo
+    []contagem de partidas
+    []soh recordes
+    []limite de ticks
 
 
 =================================================(amanhã)
