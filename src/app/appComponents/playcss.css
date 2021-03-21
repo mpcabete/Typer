@@ -70,6 +70,12 @@
   /* box-shadow: 0 0 2px black;  */
  
 }
+.keyboard{
+  display: block;
+  margin: 40px auto auto auto;
+}
+
+
 /* The typewriter cursor effect */
 @keyframes blink-caret {
   from, to { fill: transparent; }

@@ -3,6 +3,7 @@ import Position from './position'
 import Wpm from './stats/wpm'
 import Timer from './timer'
 import rw from 'random-words'
+import './charColors.css'
 class InputText extends Component {
     state = {
         text: '',
@@ -97,6 +98,11 @@ class InputText extends Component {
     
     
     render() {
+        const charN = 50
+        const text = this.state.text.substring(this.state.p, this.state.p + charN)
+        const taggedText = [...new Array(charN)].map((x,i)=>(
+            <tspan className={`char${text[i]?.toUpperCase()}`} key={this.state.p,i}>{text[i]}</tspan>
+        ))
         return (
             <>
             {this.state.log.length>0 ? <Timer onFinish={this.timerFinishedHandler} time={this.state.time}/> : <p>{this.state.time/1000}s, The timer starts when you type</p>}
@@ -112,7 +118,7 @@ class InputText extends Component {
                     </defs>
                     <text className='failed_attempts' textAnchor="end" x='50%' y='100'> {this.state.backSpaceList} </text>
                     {/* no final tem q mudar o +50 se n o texto n anda */}
-                    <text x='50%' y='100' fill='url(#grad1)'>{this.state.text.substring(this.state.p, this.state.p + 50)}</text>
+                    <text x='50%' y='100' fill='url(#grad1)'>{taggedText}</text>
                     <rect className='carret' x='calc(50% - 2px)' y='calc(100px - 1em)' width='2px' />
                 </svg >
                     

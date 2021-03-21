@@ -5,6 +5,7 @@ import ColorViz from '../appComponents/stats/colorViz'
 import Acurracy from '../appComponents/stats/accuracy';
 import playcss from '../appComponents/playcss.css'
 import AttemptsList from '../appComponents/stats/attemptsList'
+import keyboard from '../../../static/assets/keyboard.png'
 
 // const btn = <button className='start_btn' onClick={this.startChallange}>Start Challange</button>
 
@@ -21,7 +22,10 @@ class PlayPage extends Component {
     startChallange = () => {
         // console.log('click')
         this.setState({
-            content:<InputText onFinish={this.challangeEndHandler} whitespace={this.state.whitespace}/>
+            content:<>
+            <InputText onFinish={this.challangeEndHandler} whitespace={this.state.whitespace}/>
+            <img className='keyboard' src={keyboard}/>
+            </>
         })
     }
 
@@ -71,7 +75,8 @@ class PlayPage extends Component {
             <>
             
             {this.state.content}
-            
+
+
             </>
          );
     }

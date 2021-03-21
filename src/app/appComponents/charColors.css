@@ -1,0 +1,106 @@
+.inputSVG{
+  filter: drop-shadow(0px 0px 3px rgb(230, 230, 230));
+}
+/* 1 */
+.charQ{
+  fill:#E3BA22;
+}
+.charA{
+  fill:#E3BA22;
+}
+.charZ{
+  fill:#E3BA22;
+}
+/* 2 */
+.charW{
+  fill:#E58429;
+}
+.charS{
+  fill:#E58429;
+}
+.charX{
+  fill:#E58429;
+}
+/* 3 */
+.charE{
+  fill:#BD2D28;
+}
+.charD{
+  fill:#BD2D28;
+}
+.charC{
+  fill:#BD2D28;
+}
+/* 4 */
+.charR{
+  fill:#D15A86;
+}
+.charF{
+  fill:#D15A86;
+}
+.charV{
+  fill:#D15A86;
+}
+.charT{
+  fill:#8E6C8A;
+}
+.charG{
+  fill:#8E6C8A;
+}
+.charB{
+  fill:#8E6C8A;
+}
+/* 5 */
+.charY{
+  fill:#6B99A1;
+}
+.charH{
+  fill:#6B99A1;
+}
+.charN{
+  fill:#6B99A1;
+}
+.charU{
+  fill:#42A5B3;
+}
+.charJ{
+  fill:#42A5B3;
+}
+.charM{
+  fill:#42A5B3;
+}
+/* 6 */
+.charI{
+  fill:#0F8C79;
+}
+.charK{
+  fill:#0F8C79;
+}
+/* .char,{
+  fill:
+} */
+/* 7 */
+.charO{
+  fill:#6BBBA1;
+}
+.charL{
+  fill:#6BBBA1;
+}
+/* .char.{
+  fill:
+} */
+/* 8 */
+.charP{
+  fill:#5C8100;
+}
+.charÇ{
+  fill:#5C8100;
+}
+/* .char;{
+  fill:
+} */
+
+.char␣{
+  fill:#C0C0C0;
+}
+

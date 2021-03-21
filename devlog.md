@@ -112,7 +112,9 @@ amanha:
     []soh recordes
     []limite de ticks
 
-
+=================================================(20/3)
+-coloquei cores pra cada dedo e overlay do teclado
+[]colocar na config
 =================================================(amanhã)
 []arrumar bug do espaço com focus no tema
 []arrumar bug do backspace
