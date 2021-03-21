@@ -19,7 +19,7 @@ const MenuItens = [
   },
   {
     path: "/app/settings",
-    title: "Setings"
+    title: "Settings"
   },]
 class Home extends Component {
   state = {}

@@ -6,6 +6,7 @@ import Acurracy from '../appComponents/stats/accuracy';
 import playcss from '../appComponents/playcss.css'
 import AttemptsList from '../appComponents/stats/attemptsList'
 import keyboard from '../../../static/assets/keyboard.png'
+import keyboardsvg from '../../../static/assets/keyboard.svg'
 
 // const btn = <button className='start_btn' onClick={this.startChallange}>Start Challange</button>
 
@@ -24,7 +25,10 @@ class PlayPage extends Component {
         this.setState({
             content:<>
             <InputText onFinish={this.challangeEndHandler} whitespace={this.state.whitespace}/>
+            <object className='keyboard' type='image/svg+xml' data={keyboardsvg}>
+
             <img className='keyboard' src={keyboard}/>
+            </object>
             </>
         })
     }

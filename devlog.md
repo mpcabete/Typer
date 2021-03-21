@@ -114,7 +114,7 @@ amanha:
 
 =================================================(20/3)
 -coloquei cores pra cada dedo e overlay do teclado
-[]colocar na config
+-coloquei a opçao de configurar cor do texto e ingnorar backspace
 =================================================(amanhã)
 []arrumar bug do espaço com focus no tema
 []arrumar bug do backspace

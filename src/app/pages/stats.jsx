@@ -66,7 +66,7 @@ class Stats extends Component {
         // ver se ja tem dados
         if(!localStorage.history) {
             this.setState({
-                content:<h3>No Data Yet!</h3>
+                content:<h3>No Data Yet... Play a little more!</h3>
             })
         return
         }
