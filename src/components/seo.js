@@ -32,7 +32,10 @@ const SEO = ({ title, description, image, article }) => {
       <link rel="alternate" href={seo.url} hreflang="x-default" />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
-
+      
+      {/* google ads tag */}
+      <script data-ad-client="ca-pub-6940753455967275" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
       {seo.url && <meta property="og:url" content={seo.url} />}
 
       {(article ? true : null) && <meta property="og:type" content="article" />}
