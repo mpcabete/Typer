@@ -17,6 +17,7 @@ featuredImage: /assets/chris-lawton-5IHz5WhosQE-unsplash.jpg
 **added** Custom language setting
 **updated** line chart x axis settings to choose between time and round
 **updated** line chart adding circles indicating datapoints
+**updated** history entrys in stats page, adding delete button
 
 
 ### 3/20/21

@@ -128,6 +128,7 @@ amanha:
 -configurei componente pra acessar a linguagem selecionada no settings
 -coloquei opção pra ver os rounds no eixo x dos graficos do stats
 -adicionei as bolinhas no grafico de linha do stats
+-adicionei logica de deletar itens do historico pela pagina stats
 
 =================================================(amanhã)
 []arrumar bug do espaço com focus no tema
