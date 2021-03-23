@@ -49,11 +49,12 @@ class Stats extends Component {
 
     render() { 
         const {selection} = this.state
+        const xAxis = localStorage.xAxis ?? 'round'
         return ( <>
             <div className='stats-page'>
             <div className='charts'>
-            <LineChart title = {'WPM'} data={selection} x={d => d.time} y={d => d.wpm} unit=''/>
-            <LineChart title = {'Accuracy'} data={selection} x={d => d.time} y={d => d.accuracy} unit='%'/>
+            <LineChart title = {'WPM'} data={selection} x={d => d.time} y={d => d.wpm} unit='' xAxis={xAxis}/>
+            <LineChart title = {'Accuracy'} data={selection} x={d => d.time} y={d => d.accuracy} unit='%' xAxis={xAxis}/>
             </div>
             <div className='history-div'>
                 <History data={this.state.data} onSelect={this.selectHandler}/>

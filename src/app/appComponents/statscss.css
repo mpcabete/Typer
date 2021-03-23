@@ -27,6 +27,12 @@ select:focus{
   stroke: #5c2941
 }
 
+.bolinhas{
+  stroke:rgb(248, 248, 248);
+  stroke-width:1 ;
+  fill: #a06c84
+}
+
 .tick line{
   stroke:#FFFFFF
 }

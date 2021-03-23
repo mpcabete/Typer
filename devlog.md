@@ -126,6 +126,8 @@ amanha:
 ==================================================(23/3)
 -adicionei a configuraçao pra mudar a linguagem no settings
 -configurei componente pra acessar a linguagem selecionada no settings
+-coloquei opção pra ver os rounds no eixo x dos graficos do stats
+-adicionei as bolinhas no grafico de linha do stats
 
 =================================================(amanhã)
 []arrumar bug do espaço com focus no tema

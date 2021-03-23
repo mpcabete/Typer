@@ -10,6 +10,15 @@ featuredImage: /assets/chris-lawton-5IHz5WhosQE-unsplash.jpg
  
  <br/>
 
+### 3/23/21
+
+---
+
+**added** Custom language setting
+**updated** line chart x axis settings to choose between time and round
+**updated** line chart adding circles indicating datapoints
+
+
 ### 3/20/21
 
  ---

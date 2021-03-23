@@ -1,83 +1,112 @@
 import { tickStep } from 'd3-array';
 import React, { Component } from 'react';
 
-const langs = ["ko","id","is","it","ka","mk","ml","lv","ms","nl","pt_br","ro","ru","sq","sk","tr","uk","vi","ze_en","ze_zh","zh_cn","ar","bg","bn","bs","ca","el","et","eu","fa","fr","gl","he","hr","hu","no","lt","pl","pt","sl","sr","sv","th","zh_tw","cs","da","de","en","es","fi"].sort()
+const langs = ["ko", "id", "is", "it", "ka", "mk", "ml", "lv", "ms", "nl", "pt_br", "ro", "ru", "sq", "sk", "tr", "uk", "vi", "ze_en", "ze_zh", "zh_cn", "ar", "bg", "bn", "bs", "ca", "el", "et", "eu", "fa", "fr", "gl", "he", "hr", "hu", "no", "lt", "pl", "pt", "sl", "sr", "sv", "th", "zh_tw", "cs", "da", "de", "en", "es", "fi"].sort()
 
 class Settings extends Component {
   state = {
-    solid_color:false,
-    ignore_typos:false,
-    lang:'en'
+    solid_color: false,
+    ignore_typos: false,
+    lang: 'en',
+    xAxis:'round'
   }
 
-  checkboxChange = (e)=>{
+  checkboxChange = (e) => {
     this.setState({
-      [e.target.name]:e.target.checked?'1':'0'
+      [e.target.name]: e.target.checked ? '1' : '0'
     })
-    localStorage.setItem(e.target.name,e.target.checked?'1':'0')
+    localStorage.setItem(e.target.name, e.target.checked ? '1' : '0')
   }
 
-  selectChange = (e)=>{
+  selectChange = (e) => {
     this.setState({
-      [e.target.name]:e.target.value
+      [e.target.name]: e.target.value
     })
-    
-    localStorage.setItem(e.target.name,e.target.value)
+
+    localStorage.setItem(e.target.name, e.target.value)
+  }
+
+  radioChange = (e) => {
+    console.log([e.target.name],' : ', e.target.value)
+    this.setState({
+      [e.target.name]: e.target.value
+      
+    })
+
+    localStorage.setItem(e.target.name, e.target.value)
   }
 
 
   render() {
-    const {solid_color,ignore_typos,language} = this.state
+    const { solid_color, ignore_typos, language, xAxis } = this.state
 
-    return ( <>
+    return (<>
       <h1>Settings</h1>
-      <h2>Text Color</h2>
-      <ul>
-        Solid Color:  
-      <label className="switch">
-          <input 
+
+      <form>
+        <h2>Text Color</h2>
+
+
+        <label htmlFor='solid_color'>Solid Color: </label>
+        <input
           type="checkbox"
-          checked={solid_color==='1'} 
+          checked={solid_color === '1'}
           onChange={this.checkboxChange}
           name='solid_color'
-          />
-            <span className="slider round"></span>
-      </label>
-    </ul>
-      <h2>Gameplay</h2>
-      <ul>
-        Ignore Typos:  
-      <label className="switch">
-          <input 
+          id='solid_color'
+        />
+
+        <br />
+      </form>
+      <form>
+
+        <h2>Gameplay</h2>
+
+
+        <label htmlFor="ignore_typos">Ignore Typos:</label>
+        <input
           type="checkbox"
-          checked={ignore_typos==='1'} 
+          checked={ignore_typos === '1'}
           onChange={this.checkboxChange}
           name='ignore_typos'
-          />
-            <span className="slider round"></span>
-      </label>
-    
-    </ul>
-    <ul>
-      <label htmlFor="language">Random Words Language: </label>
-        <select 
-          name="language" 
-          id="language" 
-          value={language} 
+          id='ignore_typos'
+        />
+
+        <br />
+
+
+
+        <label htmlFor="language">Random Words Language: </label>
+        <select
+          name="language"
+          id="language"
+          value={language}
           onChange={this.selectChange}
         >
-          {langs.map(l=> (<option key={l} value={l}>{l}</option>))}
+          {langs.map(l => (<option key={l} value={l}>{l}</option>))}
         </select>
-      
-    </ul>
+        <br />
+      </form>
+      <form>
+
+        <h2>Stats</h2>
+        <h3>x Axis:</h3>
+        <input type="radio" id="time" name="xAxis" onChange={this.radioChange} checked={xAxis === 'time'} value="time" />
+        <label htmlFor="time">Time</label><br />
+        <input type="radio" id="round" name="xAxis" onChange={this.radioChange} checked={xAxis === 'round'} value="round" />
+        <label htmlFor="round">Round</label>
+      </form>
+
+
     </>);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.setState({
-      solid_color:localStorage.solid_color,
-      ignore_typos:localStorage.ignore_typos,
-      language:localStorage.language??'en'
+      solid_color: localStorage.solid_color,
+      ignore_typos: localStorage.ignore_typos,
+      language: localStorage.language ?? 'en',
+      xAxis:localStorage.xAxis ?? 'round'
     })
 
   }

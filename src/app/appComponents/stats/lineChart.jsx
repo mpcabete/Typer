@@ -19,23 +19,14 @@ class lineChart extends Component {
         const innerWidth = width - margin.right - margin.left
 
 
-        const {title, data,x,y,unit} = this.props
+        const {title, data, x, y, unit, xAxis} = this.props
         // escalas
-        const xScale = d3.scaleTime().domain(d3.extent(data.map(d=>x(d)))).range([0, innerWidth]).nice()
+        const xTimeScale = d3.scaleTime().domain(d3.extent(data.map(d=>x(d)))).range([0, innerWidth]).nice()
         const yScale = d3.scaleSequential().domain([0,d3.extent(data.map(d=>y(d)))[1]].reverse()).range([0, innerHeight]).nice()
+        const xIndexScale = d3.scaleSequential().domain([0,data.length-1]).range([0, innerWidth])
+        const xScale = xAxis==="round" ? xIndexScale:xTimeScale
 
-
-        // cria a linha
-        const line = d3.line()
-        .x((d, i) => xScale(x(d)))
-        .y(d => yScale(y(d)))
-        .curve(d3.curveMonotoneX)(data)
-
-        // cria o eixo x
-        // escolhe a formatação da data dependendo da escala
-        const domain = xScale.domain()
-        const deltaT = domain[1]-domain[0]
-        
+        // formato da data
         let format 
         // horas
         if(deltaT<8640000){
@@ -50,7 +41,38 @@ class lineChart extends Component {
             format = d3.timeFormat('%e/%m')
         }
 
-        const xTicks = xScale.ticks().map(tickValue => (
+        //bolinhas
+        const bolinhas = <g className="bolinhas"> {data.map((d,i)=>(
+            <circle
+            key={x(d)}
+            r='4'
+            
+            cx={xScale(xAxis==="round" ? i:x(d))}
+            cy={yScale(y(d))}
+
+            
+            >
+                <title>{format(x(d))}</title>
+            </circle>
+        ))
+        }</g>
+
+
+        // cria a linha
+        const line = d3.line()
+        // se eixo x for os rounds retorna a escala usando indice, se for tempo usa a do tempo
+        .x((d, i) => xAxis==="round"?xScale(i):xScale(x(d)))
+        .y(d => yScale(y(d)))
+        .curve(d3.curveMonotoneX)(data)
+
+        // cria o eixo x
+        // escolhe a formatação da data dependendo da escala
+        const domain = xScale.domain()
+        const deltaT = domain[1]-domain[0]
+        
+
+
+        const xTicks = xScale.ticks().map((tickValue,i) => (
             <g
                 className='tick'
                 key={tickValue}
@@ -62,10 +84,10 @@ class lineChart extends Component {
                     stroke='black'
                 />
                 <text
-                    y={innerHeight+8}
+                    y={innerHeight+8} //aaki
                     dy='.71em'
                     style={{ textAnchor: 'middle' }}
-                >{format(tickValue)}
+                >{xAxis==='round'?i:format(tickValue)}
                 </text>
             </g>
         ))
@@ -104,6 +126,7 @@ class lineChart extends Component {
                 {xTicks}
                 {yTicks}
                 <path className='data_line' fill='none' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2px' stroke='black' d={line} />
+                {bolinhas}
             </g>
         </svg>
         </>
