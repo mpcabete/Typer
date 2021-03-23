@@ -11,15 +11,12 @@ class HistoryEntry extends Component {
     this.props.onSelect(this.props.time)
   }
 
-  delete = ()=>{
-
-
-  }
+ 
 
   render() { 
     return ( <>
     <p>
-          <button onClick={this.delete} className='delete-btn'><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button onClick={()=>this.props.onDelete(this.props.time)} className='delete-btn'><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.25 9.75L9.75 17.25M17.25 17.25L9.75 9.75L17.25 17.25Z" stroke="black" strokeWidth="2" strokeLinecap="round" />
             <path d="M13.5 26C20.4036 26 26 20.4036 26 13.5C26 6.59644 20.4036 1 13.5 1C6.59644 1 1 6.59644 1 13.5C1 20.4036 6.59644 26 13.5 26Z" stroke="black" strokeWidth="2" />
           </svg>

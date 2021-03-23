@@ -2,7 +2,7 @@ import React from 'react';
 import { timeFormat } from 'd3'
 import HistoryEntry from './history-entry'
 
-const History = ({ data,onSelect }) => {
+const History = ({ data,onSelect,onDelete }) => {
 
   const listElements = data.map(
     log => (
@@ -12,6 +12,7 @@ const History = ({ data,onSelect }) => {
         wpm={log.wpm} 
         acc={log.accuracy.toFixed(1)}
         onSelect={onSelect}
+        onDelete={onDelete}
         />
       </li>
     )
