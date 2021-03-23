@@ -94,7 +94,7 @@ class Settings extends Component {
         <input type="radio" id="time" name="xAxis" onChange={this.radioChange} checked={xAxis === 'time'} value="time" />
         <label htmlFor="time">Time</label><br />
         <input type="radio" id="round" name="xAxis" onChange={this.radioChange} checked={xAxis === 'round'} value="round" />
-        <label htmlFor="round">Round</label>
+        <label htmlFor="round">Challenge</label>
       </form>
 
 

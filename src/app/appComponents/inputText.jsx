@@ -123,7 +123,7 @@ class InputText extends Component {
         const {totalEntrys,list} = await response.json()
          
      
-        const arr = [...new Array(100)].map(()=>this.getRandonWord(list,Math.random()*totalEntrys))
+        const arr = [...new Array(300)].map(()=>this.getRandonWord(list,Math.random()*totalEntrys))
         const txt = arr.join(this.props.whitespace)
         this.setState({text:txt})
 

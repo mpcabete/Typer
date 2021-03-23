@@ -20,10 +20,8 @@ class Stats extends Component {
 
         for (let i = 0; i < len; i++) {
             let current = arr[i]
-            console.log(acessor(current).getTime(), id.getTime())
             if (acessor(current).getTime() == id.getTime()) {
                 arr.splice(i, 1)
-                console.log(`item ${i} removed`)
                 return arr
             }
         } return false

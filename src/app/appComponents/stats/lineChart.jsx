@@ -122,7 +122,7 @@ class lineChart extends Component {
                 className='axis_label'
                 x={innerWidth/2} 
                 y={innerHeight+12+8+22}
-                textAnchor="middle" >Date</text>
+                textAnchor="middle" >{xAxis==='round'?'Challenge':'Date'}</text>
                 {xTicks}
                 {yTicks}
                 <path className='data_line' fill='none' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2px' stroke='black' d={line} />
