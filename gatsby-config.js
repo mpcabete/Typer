@@ -43,6 +43,14 @@ module.exports = {
         name: `content`,
       },
     },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/word-lists/`,
+      },
+    },
+    
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

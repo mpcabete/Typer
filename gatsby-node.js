@@ -1,4 +1,5 @@
 const path = require("path")
+const fs = require('fs')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
@@ -103,4 +104,32 @@ exports.onCreatePage = async ({ page, actions }) => {
     // Update the page.
     createPage(page)
   }
+}
+
+exports.onPostBuild = async ({graphql})=>{
+ const result = await graphql(`query MyQuery {
+  langs: allWordListsJson {
+    edges {
+      node {
+        list
+        lang
+        totalEntrys
+      }
+    }
+  }
+}
+`)
+
+const langsPath = './public/wordlist'
+const langs = result.data.langs.edges.map(({node})=>node)
+
+if (!fs.existsSync(langsPath)) fs.mkdirSync(langsPath)
+
+langs.map(lang =>{
+  const slug = lang.lang
+
+
+  fs.writeFileSync(`${langsPath}/${slug}.json`,JSON.stringify(lang))
+})
+
 }

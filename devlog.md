@@ -115,31 +115,38 @@ amanha:
 =================================================(20/3)
 -coloquei cores pra cada dedo e overlay do teclado
 -coloquei a opçao de configurar cor do texto e ingnorar backspace
+
+=================================================(22/3)
+-encontrei listas boas de palavras de varias linguas
+-fiz funçãozinha pra selecionar n palavras aleatorias de acordo com a frequencia de cada uma
+-transformei as listas em json
+-configurei o gatsby pra servir as listas estaticamente
+-configurar o componente pra gerar e exibir as palavras aleatorias
+
+==================================================(23/3)
+-adicionei a configuraçao pra mudar a linguagem no settings
+-configurei componente pra acessar a linguagem selecionada no settings
+
 =================================================(amanhã)
 []arrumar bug do espaço com focus no tema
 []arrumar bug do backspace
-[]fazer uma visualização pro log
+[x]fazer uma visualização pro log
     []diferenciar grafico do dia e global
     [x]grafico de linha do progresso global
         -ajeitar melhor o codigo
         -melhorar styles
         -ajeitar lables
-    []sanfona com os log
+    [-]sanfona com os log
         -tem soh as datas e wpm e quando clicka sobe o texto/erros
         -botao de excluir
-[]timing de cada letra
+[]timing de cada letra global
 
 
-[]escolher e comprar dominio
-[]escrever primeiro artigo
+
 []ajeitar a landing page e as paginas acessorias
-[]melhorar SEO
 []aplicar pra ADSENSEE!!
 - criar paginas/rotas pra planejamento
 
-
-[]implementar visualizador dos erros no texto
-[]melhorar o style
     []style do text dos svg igual do p
 []tirar a dependencia random words q tem vulnerabilidades
 ===========================
@@ -169,7 +176,7 @@ amanha:
         [x]freestyle
         -cache/local storage?
     [x]handle keys tipo alt
-    []dicas de posicionamento dos dedos
+    [x]dicas de posicionamento dos dedos
     []overlay de um teclado
         -usar overlay pra visualizar heatmap de algum dado
             -erros

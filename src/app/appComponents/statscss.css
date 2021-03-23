@@ -4,6 +4,9 @@
 
 
 } */
+select:focus{
+  box-shadow: none;
+}
 
 .stats-page{
   columns: 2;

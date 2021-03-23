@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Position from './position'
 import Wpm from './stats/wpm'
 import Timer from './timer'
-import rw from 'random-words'
 import './charColors.css'
 class InputText extends Component {
     state = {
@@ -100,6 +99,36 @@ class InputText extends Component {
         //     log:[]
         // })
     }
+
+    getRandonWord(list,entry){
+        let i = 0
+        
+        while(entry>0){
+            entry -= list[i][1]
+            i++
+            
+        }
+        return list[i][0]
+    
+        }
+
+    getRandomWords = async ()=>{
+        const language = localStorage.language ?? 'en'
+        
+        const response = await fetch(`/wordlist/${language}.json`)
+        if(response.status>400){
+            this.setState({text:"Unable to get Text :("})
+            return
+        }    
+        const {totalEntrys,list} = await response.json()
+         
+     
+        const arr = [...new Array(100)].map(()=>this.getRandonWord(list,Math.random()*totalEntrys))
+        const txt = arr.join(this.props.whitespace)
+        this.setState({text:txt})
+
+        
+    }
     
     
     render() {
@@ -134,12 +163,12 @@ class InputText extends Component {
     }
 
     componentDidMount() {
-        // this.getBook().then(book=>{
-        //     this.setState({text:book})
-        // })
 
         // randon text
-        this.setState({text:rw({ exactly: 50, join: this.props.whitespace })})
+        this.getRandomWords()
+        // this.setState({text:'kakakakak'})
+
+        //load dos settings
         this.state.settings.solid_color=localStorage.solid_color
         this.state.settings.ignore_typos=localStorage.ignore_typos
         this.setState({settings:this.state.settings})
