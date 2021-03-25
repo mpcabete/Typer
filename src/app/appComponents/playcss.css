@@ -13,7 +13,8 @@
 }
 
 .start_btn{
-  
+  margin:auto;
+  margin-bottom: 1.2em;
   background-color: #4CAF50; /* Green */
   border: 2px solid #4CAF50;
   border-radius: 10px;
@@ -22,7 +23,7 @@
   text-align: center;
   text-decoration: none;
   font-weight: 500;
-  display: inline-block;
+  display: block;
   font-size: 19px;
   transition-duration: 0.4s;
 }

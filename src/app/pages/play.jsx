@@ -15,9 +15,7 @@ class PlayPage extends Component {
     state = { 
         page:'pre',
         keyColors:defaultKeyColors,
-        whitespace:'␣',
-        content:
-            <></>
+        whitespace:'␣'
          
      }
 
@@ -40,10 +38,13 @@ class PlayPage extends Component {
     startChallange = () => {
         // console.log('click')
         this.setState({
-            screen:'challenge',
-            content:<>
-            <InputText onFinish={this.challangeEndHandler} whitespace={this.state.whitespace}/>
-            </>
+            screen:'challenge'
+        })
+    }
+
+    startPractice = ()=>{
+        this.setState({
+            screen:'practice'
         })
     }
 
@@ -58,18 +59,11 @@ class PlayPage extends Component {
 
         
 
-        // const accuracy = getAccuracy(log).toFixed(1)
-        // const deltaAccuracy = (accuracy - getAccuracy(lastChallange)).toFixed(1)
-        // console.log('deltaAccuracy',deltaAccuracy)
-        // const deltaStyle = (value) => {
-        //     return value<0?{color:'red'}:{color:'green'}
-        // }
 
         this.setState({
             screen:'end',
-            content:<>
-            
-            {<button className='start_btn' onClick={this.startChallange}>Start Challenge</button>}
+            endContent:<>           
+            <button className='start_btn' onClick={this.startChallange}>Play Again</button>
             <h2>WPM:</h2>
             <Wpm log={log} whitespace = {this.state.whitespace} lastChallange={lastChallange}/>
             <h2>Accuracy: </h2>
@@ -77,12 +71,9 @@ class PlayPage extends Component {
             <ColorViz log={log}/>
             <h2>Mistypes</h2>
             <AttemptsList log={log}/>
-            </>
+        </>
         })
-        // mandar o log pra o backend
-        // gerar statisticas resumidas
 
-        // botão de restart/voltar
     }
 
     render() { 
@@ -93,8 +84,20 @@ class PlayPage extends Component {
             // criar
             <>
             
-            {this.state.content}
-            {this.state.screen==='challenge'&&<KeyboardSvg keyColors={this.state.keyColors}/>}
+            {this.state.screen==='pre'&& <>
+            <button className='start_btn' onClick={this.startChallange}>Start Challenge</button>
+            <button className='start_btn' onClick={this.startPractice}>Practice</button>
+            </>}
+            {this.state.screen==='challenge'&& <> 
+                <InputText time={40000} onFinish={this.challangeEndHandler} whitespace={this.state.whitespace}/> 
+                <KeyboardSvg keyColors={this.state.keyColors}/>
+            </>}
+            {this.state.screen==='practice'&&<>
+                <InputText time={0} onFinish={this.challangeEndHandler} whitespace={this.state.whitespace}/> 
+                <KeyboardSvg keyColors={this.state.keyColors}/>
+            </>}
+
+            {this.state.screen === 'end' && this.state.endContent}
             
 
             </>
@@ -107,10 +110,6 @@ class PlayPage extends Component {
         window.addEventListener('keyup',(e)=>this.onKeyUp(e))
         this.setState({
             screen:'pre',
-            content:
-            <>
-            {<button className='start_btn' onClick={this.startChallange}>Start Challenge</button>}
-            </>
         })
     }
 

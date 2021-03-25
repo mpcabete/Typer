@@ -15,12 +15,7 @@ class InputText extends Component {
         settings:{}
     }
 
-    // async getBook(){
-    //     let res = await fetch('/book.txt')
-    //     let book = await res.text()
-    //     return book.replaceAll('\n','').replaceAll('’','')
-    // }
-    // qqr coisa da pra usar o charCode com o evento keypress
+    
     keyEventHandler = (e) => {
         e.preventDefault()
         const currentKey = this.state.text[this.state.p]
@@ -140,7 +135,10 @@ class InputText extends Component {
         ))
         return (
             <>
-            {this.state.log.length>0 ? <Timer onFinish={this.timerFinishedHandler} time={this.state.time}/> : <p>{this.state.time/1000}s, The timer starts when you type</p>}
+            {/* se tiver tempo, renderiza o timer se ja tiver 1 log, se não renderiza a msg */}
+            {this.props.time!=0 && (this.state.log.length>0 ? <Timer onFinish={this.timerFinishedHandler} time={this.props.time}/> : <p style={{color:'gray'}}>{this.props.time/1000}s</p>)}
+            {/* se nao tiver tempo maximo definido */}
+            {this.props.time ==0 && (<button className='start_btn' onClick={this.timerFinishedHandler}>Submit</button>)}
 
                 <svg className='inputSVG' width='100%' height='100%' onKeyDown={this.set}>
                     <defs>
