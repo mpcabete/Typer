@@ -45,7 +45,7 @@ class lineChart extends Component {
         const bolinhas = <g className="bolinhas"> {data.map((d,i)=>(
             <circle
             key={x(d)}
-            r='4'
+            r='3'
             
             cx={xScale(xAxis==="round" ? i:x(d))}
             cy={yScale(y(d))}

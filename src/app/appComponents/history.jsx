@@ -16,7 +16,7 @@ const History = ({ data,onSelect,onDelete }) => {
         />
       </li>
     )
-  )
+  ).reverse()
 
 
 

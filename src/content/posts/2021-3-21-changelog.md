@@ -10,6 +10,12 @@ featuredImage: /assets/chris-lawton-5IHz5WhosQE-unsplash.jpg
  
  <br/>
 
+### 3/25/21
+
+---
+
+**updated** Keyboard overlay to hilight the keys pressed
+
 ### 3/23/21
 
 ---
