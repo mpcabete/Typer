@@ -1,12 +1,13 @@
 import { tickStep } from 'd3-array';
 import React, { Component } from 'react';
-
+import '../appComponents/settingsCss.css';
 const langs = ["ko", "id", "is", "it", "ka", "mk", "ml", "lv", "ms", "nl", "pt_br", "ro", "ru", "sq", "sk", "tr", "uk", "vi", "ze_en", "ze_zh", "zh_cn", "ar", "bg", "bn", "bs", "ca", "el", "et", "eu", "fa", "fr", "gl", "he", "hr", "hu", "no", "lt", "pl", "pt", "sl", "sr", "sv", "th", "zh_tw", "cs", "da", "de", "en", "es", "fi"].sort()
 
 class Settings extends Component {
   state = {
     solid_color: false,
     ignore_typos: false,
+    challengeTime:40,
     lang: 'en',
     xAxis:'round'
   }
@@ -36,9 +37,17 @@ class Settings extends Component {
     localStorage.setItem(e.target.name, e.target.value)
   }
 
+  numberChange = (e)=>{
+
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+    localStorage.setItem(e.target.name,e.target.value)
+  }
+
 
   render() {
-    const { solid_color, ignore_typos, language, xAxis } = this.state
+    const { solid_color, ignore_typos, language, xAxis, challengeTime } = this.state
 
     return (<>
       <h1>Settings</h1>
@@ -47,7 +56,7 @@ class Settings extends Component {
         <h2>Text Color</h2>
 
 
-        <label htmlFor='solid_color'>Solid Color: </label>
+        <label htmlFor='solid_color'>Solid Color:</label>
         <input
           type="checkbox"
           checked={solid_color === '1'}
@@ -58,7 +67,7 @@ class Settings extends Component {
 
         <br />
       </form>
-      <form>
+      <form onSubmit={e=>e.preventDefault()}>
 
         <h2>Gameplay</h2>
 
@@ -74,9 +83,21 @@ class Settings extends Component {
 
         <br />
 
+        <label htmlFor="challengeTime">Challenge Time:</label>
+        <input
+          className='numberInput'
+          type="number"
+          value={this.state.challengeTime}
+          onChange={this.numberChange}
+          name='challengeTime'
+          id='challengeTime'
+        />s
+
+        <br />
 
 
-        <label htmlFor="language">Random Words Language: </label>
+
+        <label htmlFor="language">Random Words Language:</label>
         <select
           name="language"
           id="language"
@@ -106,7 +127,8 @@ class Settings extends Component {
       solid_color: localStorage.solid_color,
       ignore_typos: localStorage.ignore_typos,
       language: localStorage.language ?? 'en',
-      xAxis:localStorage.xAxis ?? 'round'
+      xAxis:localStorage.xAxis ?? 'round',
+      challengeTime:localStorage.challengeTime ?? 40
     })
 
   }

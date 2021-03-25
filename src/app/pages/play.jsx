@@ -48,7 +48,7 @@ class PlayPage extends Component {
         })
     }
 
-    challangeEndHandler = (log)=>{
+    challengeEndHandler = (log)=>{
         // salvar log no local storage(talvez isso use mta memoria pra usuarios antigos)
         let localHistory = JSON.parse(localStorage.history ?? '[]')
         localHistory.push(log)
@@ -89,11 +89,11 @@ class PlayPage extends Component {
             <button className='start_btn' onClick={this.startPractice}>Practice</button>
             </>}
             {this.state.screen==='challenge'&& <> 
-                <InputText time={40000} onFinish={this.challangeEndHandler} whitespace={this.state.whitespace}/> 
+                <InputText time={(localStorage.challengeTime ?? 40) * 1000} onFinish={this.challengeEndHandler} whitespace={this.state.whitespace}/> 
                 <KeyboardSvg keyColors={this.state.keyColors}/>
             </>}
             {this.state.screen==='practice'&&<>
-                <InputText time={0} onFinish={this.challangeEndHandler} whitespace={this.state.whitespace}/> 
+                <InputText time={0} onFinish={this.challengeEndHandler} whitespace={this.state.whitespace}/> 
                 <KeyboardSvg keyColors={this.state.keyColors}/>
             </>}
 
