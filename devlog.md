@@ -130,6 +130,11 @@ amanha:
 -adicionei as bolinhas no grafico de linha do stats
 -adicionei logica de deletar itens do historico pela pagina stats
 
+===================================================(25/3)
+-coloquei o svg do teclado em um componente do react
+-coloquei as cores das teclas a-z como props passados pro componente
+-coloquei eventos pra mudar as cores do teclado conforme as teclas sao pressionadas
+
 =================================================(amanhã)
 []arrumar bug do espaço com focus no tema
 []arrumar bug do backspace
