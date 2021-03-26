@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LineChart from '../appComponents/stats/lineChart'
+import Latencys from '../appComponents/stats/charLatency'
 import { getWpm } from '../appComponents/stats/wpm'
 import { getAccuracy } from '../appComponents/stats/accuracy'
 import { Flex } from '@theme-ui/components';
@@ -9,8 +10,7 @@ import { selection } from 'd3-selection';
 
 class Stats extends Component {
     state = {
-        content: <></>,
-        data: [],
+        logs:[],
         selection: []
     }
 
@@ -58,10 +58,12 @@ class Stats extends Component {
 
         const acessor = d=>d[0].timestamp
 
-        this.logs = this.removeEntry(acessor,this.logs,id)
+        const newLogs = this.removeEntry(acessor,this.state.logs,id)
+        this.setState ({logs:newLogs})
 
         //TODO: botao de save
-        localStorage.history=JSON.stringify(this.logs)
+        localStorage.history=JSON.stringify(newLogs)
+        console.log('string',JSON.stringify(newLogs))
         // atualiza o estado
         // tira do local storage
         // atualiza local storage
@@ -71,6 +73,7 @@ class Stats extends Component {
         const { selection } = this.state
         const xAxis = localStorage.xAxis ?? 'round'
         return (<>
+            {!this.state.data?<h3>No Data Yet... Play a little more!</h3>:
             <div className='stats-page'>
                 <div className='charts'>
                     <LineChart title={'WPM'} data={selection} x={d => d.time} y={d => d.wpm} unit='' xAxis={xAxis} />
@@ -79,7 +82,8 @@ class Stats extends Component {
                 <div className='history-div'>
                     <History data={this.state.data} onSelect={this.selectHandler} onDelete={this.deleteHandler} />
                 </div>
-            </div>
+                <Latencys logs={this.state.logs}/>
+            </div>}
         </>);
     }
 
@@ -88,25 +92,28 @@ class Stats extends Component {
         // ver se ja tem dados
         if (!localStorage.history) {
             this.setState({
+                data:false,
                 content: <h3>No Data Yet... Play a little more!</h3>
             })
             return
         }
 
         // parse local storage this.logs
-        this.logs = JSON.parse(localStorage.history)
-        this.logs = this.logs.map(log => log.map(c => { c.timestamp = new Date(c.timestamp); return c }))
+        let logs = JSON.parse(localStorage.history)
+        logs = logs.map(log => log.map(c => { c.timestamp = new Date(c.timestamp); return c }))
+        this.setState({logs:logs})
 
-        if (this.logs.length == 1) {
+        if (logs.length <= 1) {
             this.setState({
-                content: <h3>No Data Yet!</h3>,
+                data:false,
+                content: <h3>No Data Yet... Play a little more!</h3>,
 
             })
             return
         }
 
         // calcular os wpm dos desafios
-        const data = this.logs.map(log => ({
+        const data = logs.map(log => ({
             time: log[0].timestamp,
             wpm: parseFloat(getWpm(log, '␣')),
             accuracy: getAccuracy(log)

@@ -9,7 +9,7 @@ select:focus{
 }
 
 .stats-page{
-  columns: 2;
+  display: flex;
   padding: 0;
   margin: 0;
 }
@@ -128,4 +128,19 @@ select:focus{
   text-align: right;
   overflow: auto;
 
+}
+
+table {
+  margin-left: auto;
+  
+}
+
+td, th {
+  border: 1px solid #EFECEA;
+  text-align: center;
+  padding: 3px;
+}
+
+tr:nth-child(even) {
+  background-color: #EFECEA;
 }
