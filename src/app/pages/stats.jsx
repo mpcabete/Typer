@@ -63,7 +63,7 @@ class Stats extends Component {
 
         //TODO: botao de save
         localStorage.history=JSON.stringify(newLogs)
-        console.log('string',JSON.stringify(newLogs))
+        // console.log('string',JSON.stringify(newLogs))
         // atualiza o estado
         // tira do local storage
         // atualiza local storage

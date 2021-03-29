@@ -113,6 +113,7 @@ exports.onPostBuild = async ({graphql})=>{
       node {
         list
         lang
+        listEntrys
         totalEntrys
       }
     }
@@ -120,7 +121,7 @@ exports.onPostBuild = async ({graphql})=>{
 }
 `)
 
-const langsPath = './public/wordlist'
+const langsPath = './public/word-lists'
 const langs = result.data.langs.edges.map(({node})=>node)
 
 if (!fs.existsSync(langsPath)) fs.mkdirSync(langsPath)

@@ -49,6 +49,9 @@ class PlayPage extends Component {
     }
 
     challengeEndHandler = (log)=>{
+        //TODO: elevar estado do p se precisar 
+
+
         // salvar log no local storage(talvez isso use mta memoria pra usuarios antigos)
         let localHistory = JSON.parse(localStorage.history ?? '[]')
         localHistory.push(log)

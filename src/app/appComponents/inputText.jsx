@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import Position from './position'
 import Wpm from './stats/wpm'
 import Timer from './timer'
+import getRandomText from './getRandomText'
 import './charColors.css'
 class InputText extends Component {
     state = {
-        text: '',
+        text: 'placeholder',
         p: 0,
         // n lembro pq tao separadas
         backSpaceList:[],
@@ -21,6 +22,7 @@ class InputText extends Component {
         const currentKey = this.state.text[this.state.p]
         // muda espaço por this.props.whitespace
         const userInput = e.key === ' ' ? this.props.whitespace:e.key
+
         // ver se eh backspace
         if(userInput==='Backspace'){
             this.setState({
@@ -75,29 +77,22 @@ class InputText extends Component {
                 backSpaceList:[]
             })
         }
-        // - talvez deixar sempre o prevent default?
-        // prevent default do espaço (scroll)
-        // if(e.key===' '){
-        //     e.preventDefault()
-        // }
-        
+ 
         
     }
     
     timerFinishedHandler = () => {
-        console.log('finished!')
-        // salva o log
-        // informação visual de q o tempo acabou
-        // reinicia o log
+        console.log('timer finished!')
+
+        // seta o p pro proximo espaço
+        localStorage.randomTextP = localStorage.randomText.indexOf(this.props.whitespace,this.state.p)+1
         this.props.onFinish(this.state.log)
-        // this.setState({
-        //     log:[]
-        // })
+
     }
 
     getRandonWord(list,entry){
         let i = 0
-        
+
         while(entry>0){
             entry -= list[i][1]
             i++
@@ -110,15 +105,16 @@ class InputText extends Component {
     getRandomWords = async ()=>{
         const language = localStorage.language ?? 'en'
         
-        const response = await fetch(`/wordlist/${language}.json`)
+        const response = await fetch(`/word-lists/${language}.json`)
         if(response.status>400){
             this.setState({text:"Unable to get Text :("})
             return
         }    
-        const {totalEntrys,list} = await response.json()
+        const parsedResponse = await response.json()
+        const {listEntrys,list} = parsedResponse
          
      
-        const arr = [...new Array(300)].map(()=>this.getRandonWord(list,Math.random()*totalEntrys))
+        const arr = [...new Array(300)].map(()=>this.getRandonWord(list,Math.floor(Math.random()*listEntrys)))
         const txt = arr.join(this.props.whitespace)
         this.setState({text:txt})
 
@@ -127,6 +123,7 @@ class InputText extends Component {
     
     
     render() {
+        
         const charN = 50
         const text = this.state.text.substring(this.state.p, this.state.p + charN)
         // axo q se usasse um modelo de pilha (fi-lo) ao invez de criar o array toda vez seria melhor
@@ -160,11 +157,11 @@ class InputText extends Component {
         );
     }
 
-    componentDidMount() {
-
-        // randon text
-        this.getRandomWords()
-        // this.setState({text:'kakakakak'})
+    async componentDidMount() {
+        this.setState({
+            text:await getRandomText(this.props.whitespace),
+            p:parseInt(localStorage.randomTextP)
+        })
 
         //load dos settings
         this.state.settings.solid_color=localStorage.solid_color

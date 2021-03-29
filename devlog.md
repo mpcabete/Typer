@@ -135,6 +135,26 @@ amanha:
 -coloquei as cores das teclas a-z como props passados pro componente
 -coloquei eventos pra mudar as cores do teclado conforme as teclas sao pressionadas
 -mudei o history pra ordem mais recente -> mais antigo
+-coloquei o tempo do challenge no settings
+-coloquei modo treino com tempo indeterminado
+    []criar mais palavras quando xegar no final
+
+====================================================(26/3)
+-mudei palavras pras top 2000
+
+=====================================================(27/3 28/3)
+mudei a lista de palavras pra ser ela integral na api
+comecei visualizaçao de dados da lista de palavras
+
+======================================================(29/3)
+juntei toda a funcionalidade de pegar a lista na api, aplicar os filtros e gerar o texto na mesma funçao
+coloquei um chache e uma logica pra ele
+    -guardar a lista e so acessar a api se mudar a lang
+    -guardar um texto ja montado
+    -criar novo texto se a lingua mudar ou se tiver acabano
+        -[?]concatenar o texto novo com o antigo e não zerar o p?
+        -mta memoria...
+
 =================================================(amanhã)
 []arrumar bug do espaço com focus no tema
 []arrumar bug do backspace

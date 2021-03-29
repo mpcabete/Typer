@@ -1,7 +1,8 @@
-import{Router,Link} from '@reach/router'
+import{Router} from '@reach/router'
 import React from 'react'
+
+
 import Home from '../app/appHome'
-import LineChart from '../app/appComponents/stats/lineChart'
 import Play from '../app/pages/play'
 import Stats from '../app/pages/stats'
 import Settings from '../app/pages/settings'
