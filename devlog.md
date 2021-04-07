@@ -156,6 +156,7 @@ coloquei um chache e uma logica pra ele
         -mta memoria...
 
 =================================================(amanhã)
+[]mudar cor dos hiperlink nos post
 []arrumar bug do espaço com focus no tema
 []arrumar bug do backspace
 [x]fazer uma visualização pro log

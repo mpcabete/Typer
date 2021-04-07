@@ -6,7 +6,7 @@ import getRandomText from './getRandomText'
 import './charColors.css'
 class InputText extends Component {
     state = {
-        text: 'placeholder',
+        text: '...',
         p: 0,
         // n lembro pq tao separadas
         backSpaceList:[],
