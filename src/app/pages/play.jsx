@@ -54,8 +54,11 @@ class PlayPage extends Component {
 
         // salvar log no local storage(talvez isso use mta memoria pra usuarios antigos)
         let localHistory = JSON.parse(localStorage.history ?? '[]')
-        localHistory.push(log)
-
+        console.log(log)
+        if (log.length>10){
+            localHistory.push(log)
+        }
+        
         localStorage.setItem('history',JSON.stringify( localHistory ))
         // mostra estatisticas
         const lastChallange = localHistory[localHistory.length-2]?.map(c=>{c.timestamp = new Date(c.timestamp); return c}) ?? null
