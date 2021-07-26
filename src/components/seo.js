@@ -34,7 +34,7 @@ const SEO = ({ title, description, image, article }) => {
       <meta name="image" content={seo.image} />
       
       {/* google ads tag */}
-      <script data-ad-client="ca-pub-6940753455967275" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      {/* <script data-ad-client="ca-pub-6940753455967275" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
       
       {seo.url && <meta property="og:url" content={seo.url} />}
 

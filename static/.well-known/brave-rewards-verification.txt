@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: taptaptyper.com
+Token: ec234094b7b280d2ff95cdfffa08dee3693518009fa93dd3c403efaf13db2b5d

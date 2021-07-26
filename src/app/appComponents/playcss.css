@@ -1,11 +1,27 @@
 
-.carret{
-  animation: blink-caret 1s step-end infinite;
-  height: 1.1em;
+.input-div{
+  margin-top: 100px;
+  position: relative;
+  /* font-size: 1.5em; */
+  
+}
+
+.input-element{
+  border: none;
+  margin-right:0;
+  text-align: right;
+  width: 50%;
+  position: absolute;
+  right:50%;
+  font-size: 1.5em;
+  color: rgb(173, 173, 173);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .inputSVG{
   font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
 }
 
 .failed_attempts{
@@ -78,8 +94,6 @@
 
 
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { fill: transparent; }
-  50% { fill:#a5a5a5; }
-}
+
+
+

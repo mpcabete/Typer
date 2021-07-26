@@ -103,7 +103,7 @@ const getRandonWord = (list,entry)=>{
 const isValid = (w)=>{
   const defaultFilters = JSON.stringify({
     minLength : 4,
-    onlyAplphanumerical:true
+    onlyAplphanumerical:false
   })
 
   const {minLength,onlyAplphanumerical} = JSON.parse(localStorage.filters ?? defaultFilters) 
