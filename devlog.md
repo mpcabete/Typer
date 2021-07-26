@@ -155,9 +155,6 @@ coloquei um chache e uma logica pra ele
         -[?]concatenar o texto novo com o antigo e não zerar o p?
         -mta memoria...
 
-=======================================================(7/4)
-mudei o input pra um elemento e evento input ao invez de keydown event
-coloquei livro do frankstein no lugar do texto pra testar
 =================================================(amanhã)
 []mudar cor dos hiperlink nos post
 []arrumar bug do espaço com focus no tema
